@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Calculator.csproj", "{F18383F5-CF25-4C10-9C24-6278ED656D7C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZodiacStruc", "ZodiacStruc\ZodiacStruc.csproj", "{83B5D08F-4020-4A13-9E39-C7307349F235}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F18383F5-CF25-4C10-9C24-6278ED656D7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F18383F5-CF25-4C10-9C24-6278ED656D7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F18383F5-CF25-4C10-9C24-6278ED656D7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F18383F5-CF25-4C10-9C24-6278ED656D7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83B5D08F-4020-4A13-9E39-C7307349F235}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83B5D08F-4020-4A13-9E39-C7307349F235}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83B5D08F-4020-4A13-9E39-C7307349F235}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83B5D08F-4020-4A13-9E39-C7307349F235}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
