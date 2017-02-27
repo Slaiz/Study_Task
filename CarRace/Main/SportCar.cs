@@ -8,29 +8,29 @@ using System.Threading.Tasks;
 
 namespace Main
 {
-    class SportCar:Car
+    class SportCar : Car
     {
         private Thread thread;
-        private object threadLock = new object();
 
         public SportCar(string name)
-        {            
+        {
             Name = name;
             MaxSpeed = 25;
-            Health = R.Next(30,75);
+            Health = R.Next(30, 75);
             Speed = R.Next(1, MaxSpeed);
             Program.OnStart += Start;
         }
 
 
         public override void Drive()
-        {             
-            Statistics(this);
-
+        {
             do
             {
+                Statistics(this);
+
                 lock (threadLock)
                 {
+
                     Console.ForegroundColor = ConsoleColor.DarkRed;
 
                     for (int i = 0; i < Speed; i++)
@@ -44,6 +44,10 @@ namespace Main
                             Console.WriteLine("{0} on Finish !", nameof(SportCar) + " " + Name);
                             break;
                         }
+
+
+                        if (i == Speed - 1)
+                            Console.WriteLine(">");
                     }
 
                     Speed = R.Next(1, MaxSpeed);
@@ -60,10 +64,9 @@ namespace Main
                     }
 
                     Statistics(this);
-                    thread.Join();
                 }
-                
-            } while (Distance <=100);
+                Thread.Sleep(100);
+            } while (Distance <= 100);
 
             if (Distance >= 100)
                 Console.WriteLine("{0} on Finish !", nameof(SportCar) + " " + Name);
@@ -71,7 +74,7 @@ namespace Main
 
         public void Start(object sender, EventArgs eventArgs)
         {
-            Console.WriteLine("{0} begin race !", nameof(SportCar)+" "+Name);
+            Console.WriteLine("{0} begin race !", nameof(SportCar) + " " + Name);
             Thread.Sleep(300);
             thread = new Thread(Drive);
             thread.Start();

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Main
 {
-    class Jeep:Car
+    class Jeep : Car
     {
         private Thread thread;
         private object threadLock = new object();
@@ -22,12 +22,13 @@ namespace Main
         }
         public override void Drive()
         {
-            Statistics(this);
-
             do
             {
+                Statistics(this);
+
                 lock (threadLock)
                 {
+
                     Console.ForegroundColor = ConsoleColor.Green;
 
                     for (int i = 0; i < Speed; i++)
@@ -41,6 +42,9 @@ namespace Main
                             Console.WriteLine("{0} on Finish !", nameof(Jeep) + " " + Name);
                             break;
                         }
+
+                        if (i == Speed-1)
+                            Console.WriteLine(">");
                     }
 
                     Speed = R.Next(1, MaxSpeed);
@@ -57,9 +61,13 @@ namespace Main
                     }
 
                     Statistics(this);
-                    thread.Join();
+
                 }
+                Thread.Sleep(100);
+
             } while (Distance <= 100);
+
+            thread.Join();
 
             if (Distance >= 100)
                 Console.WriteLine("{0} on Finish !", nameof(Jeep) + " " + Name);

@@ -16,6 +16,8 @@ namespace Main
         public int Health { get; set; }
         public int Distance { get; set; }
 
+        public static object threadLock = new object();
+
         public abstract void Drive();
 
         public void SetColor(Car car)
@@ -54,7 +56,7 @@ namespace Main
         public void Statistics(Car car)
         {
             SetColor(car);
-            Console.WriteLine("\n>" + nameof(Car) + " " + Name);
+            Console.WriteLine("\n"+nameof(Car) + " " + Name);
             Console.WriteLine("{0} km to finish", 100 - Distance);
             Console.WriteLine("Health: {0}\nSpeed: {1}", Health, Speed);
             Thread.Sleep(300);
